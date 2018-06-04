@@ -5,6 +5,22 @@
   <title>🎮 Konami Code</title>
 </head>
 <body>
+  <script>
 
+    const pressed = [];
+    const konamiCode = '3838404037393739666513'
+
+    window.addEventListener( 'keyup', ( e ) => {
+      pressed.push( e.keyCode );
+      pressed.splice( -konamiCode.length -1, pressed.length - konamiCode.length );
+
+      if ( pressed.join( '' ).includes( konamiCode ) ) {
+        console.log( 'IT WORKED' );
+      }
+
+      console.log( pressed );
+    });
+
+  </script>
 </body>
 </html>
